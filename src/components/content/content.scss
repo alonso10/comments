@@ -1,0 +1,10 @@
+$screen-small: 600px;
+
+.content {
+    width: 60%;
+    margin: auto;
+    padding: 1rem;
+    @media screen and (max-width: $screen-small) {
+        width: 100%;
+    }
+}
