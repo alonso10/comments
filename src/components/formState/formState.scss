@@ -1,13 +1,12 @@
-$color_button: #3FBF3F;
-$background_color: white;
+@import '../../styles/colors.scss';
 
 .content_publish {
-    background-color: $background_color;
+    background-color: $content_color;
     margin-bottom: 1rem;
 }
 
 .button_publish {
-    background-color: $color_button;
+    background-color: $green;
     color: white;
     padding: 0.5rem 1.2rem;
     margin: 0.5rem;
@@ -22,6 +21,6 @@ $background_color: white;
     border: none;
     font-size: 1rem;
     &::placeholder {
-        color: $color_button
+        color: $green
     }
 }

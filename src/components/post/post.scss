@@ -1,0 +1,42 @@
+@import '../../styles/colors.scss';
+
+.image {
+    width: 3rem;
+    margin-right: 1rem;
+    opacity: 0.3;
+}
+
+.post-name {
+    color: $green;
+    margin: 0;
+    padding: 0;
+}
+
+.post-date {
+    margin: 0 0 0.5rem;
+    padding: 0;
+    font-size: 0.6em;
+}
+
+.post-content {
+    background-color: $content_color;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.actions-post {
+    margin: 1rem 0;
+}
+
+.button-post {
+    padding: 0.6rem;
+    border: none;
+    color: $green;
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
+    outline: none;
+    &:active {
+        color: green;
+        font-size: 1rem;
+    };
+}
