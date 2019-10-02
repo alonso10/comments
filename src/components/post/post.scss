@@ -6,6 +6,11 @@
     opacity: 0.3;
 }
 
+.post {
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
 .post-name {
     color: $green;
     margin: 0;
@@ -21,7 +26,6 @@
 .post-content {
     background-color: $content_color;
     margin-bottom: 1rem;
-    padding: 1rem;
 }
 
 .actions-post {
@@ -39,4 +43,52 @@
         color: green;
         font-size: 1rem;
     };
+}
+
+.image-comment {
+    width: 2.5rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    opacity: 0.3;
+}
+
+.content-comment {
+    background-color: $color_comments;
+    padding: 1rem 0;
+}
+
+.count-comments {
+    padding: 1rem;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: rgba(#000000, 0.2);
+    font-size: 0.8rem;
+    color: $color_borders
+}
+
+.box-comment {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(#000000, 0.2);
+    border-radius: 5px;
+    padding: 1%;
+    width: 98%;
+    height: 100px;
+    font-size: 0.8rem;
+    &:focus {
+        outline: none;
+        border:1px solid $color_comments;
+        box-shadow: 0 0 10px #719ECE;
+    }
+}
+
+.button-comment {
+    background-color: $green;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin: 8px 0;
+    border-radius: 5px;
 }
