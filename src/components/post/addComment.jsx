@@ -12,7 +12,7 @@ const NewComment = (props) => {
   const save = () => {
     const { postId, addComment, closeModal } = props;
     const content = {
-      name: "Erian Rincon",
+      name: props.name,
       text: comment,
       date: moment().format('YYYY-MM-DD HH:mm:ss')
     };
@@ -35,7 +35,8 @@ const NewComment = (props) => {
 
 function mapStateToProps(state) {
   return {
-    postId: state.modal.postId
+    postId: state.modal.postId,
+    name: state.name
   };
 }
 

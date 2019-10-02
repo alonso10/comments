@@ -43,6 +43,9 @@
         color: green;
         font-size: 1rem;
     };
+    &:disabled {
+        color: rgba(#FF0000, 0.3);
+    }
 }
 
 .image-comment {

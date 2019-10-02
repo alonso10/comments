@@ -20,8 +20,9 @@ class FormState extends Component {
     this.props.addPost({
       text,
       date: moment().format('YYYY-MM-DD HH:mm:ss'),
-      name: "Erian Rincon"
+      name: this.props.name
     });
+    this.setState({ text: "" });
   }
 
   render() {
@@ -32,14 +33,22 @@ class FormState extends Component {
             <textarea
               className="text_box" 
               rows={3} 
-              placeholder="Escribe aquí tu estado"
+              placeholder={this.props.name === "" ? "Ingrese su nombre en la parte superior" : "Escribe aquí tu estado"}
               onChange={this.handleChange}
+              value={this.state.text}
+              disabled={this.props.name === ""}
             ></textarea>
           </Col>
           <Col xs={12}>
             <Row end="xs">
               <Col xs={6}>
-                <button className="button_publish" onClick={ () => this.addState() }>Publicar</button>
+                <button 
+                  className="button_publish" 
+                  onClick={ () => this.addState() }
+                  disabled={this.props.name === ""}
+                >
+                  Publicar
+                </button>
               </Col>
             </Row>
           </Col>
@@ -49,4 +58,10 @@ class FormState extends Component {
   }
 }
 
-export default connect(null, { addPost })(FormState);
+function mapStateToProps(state) {
+  return {
+    name: state.name
+  }
+}
+
+export default connect(mapStateToProps, { addPost })(FormState);

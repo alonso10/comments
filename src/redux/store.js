@@ -1,12 +1,13 @@
 import { createStore, combineReducers } from 'redux';
 import addPost from './reducers/addPost';
-import addComment from './reducers/addComment';
 import handleModal from './reducers/handleModal';
+import addName from './reducers/addName';
 import { data } from './data/initialData';
 
 const reducer = combineReducers({
     post: addPost,
-    modal: handleModal
+    modal: handleModal,
+    name: addName
 });
 
 const initialState = {
@@ -16,7 +17,8 @@ const initialState = {
     modal: {
         visible: false,
         postId: null
-    }
+    },
+    name: ''
 };
 
 const store = createStore(

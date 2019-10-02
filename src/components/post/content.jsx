@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { connect } from 'react-redux';
-import { openModal } from '../../redux/actions';
+import { openModal, addReaction } from '../../redux/actions';
 import { handleDate } from '../../helpers';
 import Comment from './comments';
 import './post.scss';
@@ -42,8 +42,20 @@ const Publication = (props) => {
                       </Col>
                       <Col xs={12}>
                         <div className="actions-post">
-                          <button className="button-post">Reaccionar</button>
-                          <button className="button-post" onClick={() => addComment(post.id)}>Comentar</button>
+                          <button
+                            className="button-post" 
+                            onClick={() => props.addReaction(post.id)}
+                            disabled={props.name === ""}
+                          >
+                            Reaccionar
+                          </button>
+                          <button 
+                            className="button-post" 
+                            onClick={() => addComment(post.id)}
+                            disabled={props.name === ""}
+                          >
+                            Comentar
+                          </button>
                         </div>
                       </Col>
                     </Row>
@@ -59,4 +71,10 @@ const Publication = (props) => {
   );
 }
 
-export default connect(null, { openModal })(Publication);
+function mapStateToProps(state) {
+  return {
+    name: state.name
+  }
+}
+
+export default connect(mapStateToProps, { openModal, addReaction })(Publication);

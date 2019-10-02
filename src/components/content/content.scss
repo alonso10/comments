@@ -1,10 +1,83 @@
 $screen-small: 600px;
 
 .content {
-    width: 60%;
-    margin: auto;
-    padding: 1rem;
-    @media screen and (max-width: $screen-small) {
-        width: 100%;
+  width: 60%;
+  margin: auto;
+  padding: 1rem;
+  @media screen and (max-width: $screen-small) {
+    width: 100%;
+  }
+}
+
+.topnav {
+  background-color: white;
+  overflow: hidden;
+  height: 4rem;
+  width: 100%;
+}
+
+.title {
+  text-align: end;
+  margin: 0.5rem 0;
+  font-size: 2rem;
+}
+
+.content-input {
+  text-align: end;
+  margin: 1rem;
+  input {
+    width: 300px;
+    padding: 5px;
+    font-size: 1rem;
+  };
+  button {
+    padding: 6px;
+    font-size: 1rem;
+  }
+}
+
+@media(max-width: 768px) {
+  .topnav {
+    height: 6rem;
+  }
+  .title {
+    text-align: start;
+    font-size: 1rem;
+  }
+  .content-input {
+    text-align: end;
+    margin: 1rem;
+    input {
+      width: 200px;
+      padding: 5px;
+      font-size: 1rem;
+    };
+    button {
+      padding: 6px;
+      font-size: 1rem;
     }
+  }
+}
+
+@media(max-width: 375px) {
+  .topnav {
+    height: 6rem;
+  }
+  .title {
+    text-align: start;
+    font-size: 1rem;
+  }
+  .content-input {
+    text-align: end;
+    margin: 0.5rem;
+    input {
+      width: 150px;
+      padding: 3px;
+      font-size: 0.8rem;
+    };
+    button {
+      padding: 4px;
+      font-size: 0.8rem;
+    }
+  }
 }
