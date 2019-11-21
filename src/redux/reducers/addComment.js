@@ -1,19 +1,17 @@
-import { ADD_COMMENT } from '../actions/actionTypes';
+import { ADD_COMMENT } from '../actions/actionTypes'
 
 function reducer(state = {}, { type, payload }) {
   switch (type) {
     case ADD_COMMENT: {
-      console.log(state);
-      const { publications } = state;
-      const post = publications.find(value => {
-        return value.postId === payload.postId;
-      });
-      console.log(post);
-      return state;
+      const { publications } = state
+      publications.find(value => {
+        return value.postId === payload.postId
+      })
+      return state
     }
     default:
-      return state;
+      return state
   }
 }
 
-export default reducer;
+export default reducer
